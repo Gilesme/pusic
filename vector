@@ -1,0 +1,65 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Definizione della classe Prodotto
+class Prodotto {
+public:
+    // Costruttore della classe Prodotto
+    Prodotto(int id, string nome, double prezzo, int quantita)
+        : id(id), nome(nome), prezzo(prezzo), quantita(quantita) {}
+
+    // Metodo per visualizzare le informazioni del prodotto
+    void visualizzaProdotto() const {
+        cout << "ID: " << id << ", Nome: " << nome << ", Prezzo: " << prezzo << ", Quantità: " << quantita << endl;
+    }
+
+private:
+    int id;
+    string nome;
+    double prezzo;
+    int quantita;
+};
+
+// Definizione della classe SistemaInventario
+class SistemaInventario {
+public:
+    // Metodo per aggiungere un nuovo prodotto all'inventario
+    void aggiungiProdotto(int id, string nome, double prezzo, int quantita) {
+        Prodotto nuovoProdotto(id, nome, prezzo, quantita);
+        inventario.push_back(nuovoProdotto);
+        cout << "Prodotto aggiunto all'inventario." << endl;
+    }
+
+    // Metodo per visualizzare l'intero inventario
+    void visualizzaInventario() const {
+        if (inventario.empty()) {
+            cout << "L'inventario è vuoto." << endl;
+        } else {
+            cout << "Inventario:" << endl;
+            for (const Prodotto& prodotto : inventario) {
+                prodotto.visualizzaProdotto();
+            }
+        }
+    }
+
+private:
+    vector<Prodotto> inventario;
+};
+
+// Funzione principale
+int main() {
+    SistemaInventario sistema;
+
+    // Aggiungi alcuni prodotti all'inventario
+    sistema.aggiungiProdotto(1, "Laptop", 999.99, 5);
+    sistema.aggiungiProdotto(2, "Smartphone", 499.99, 10);
+    sistema.aggiungiProdotto(3, "Stampante", 199.99, 3);
+
+    // Visualizza l'inventario
+    sistema.visualizzaInventario();
+
+    return 0;
+}
