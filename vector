@@ -16,6 +16,11 @@ public:
         cout << "ID: " << id << ", Nome: " << nome << ", Prezzo: " << prezzo << ", Quantità: " << quantita << endl;
     }
 
+    // Metodo per ottenere l'ID del prodotto
+    int getID() const {
+        return id;
+    }
+
 private:
     int id;
     string nome;
@@ -45,6 +50,32 @@ public:
         }
     }
 
+    // Metodo per cercare un prodotto per ID e visualizzarne le informazioni
+    void cercaProdottoPerID(int id) const {
+        for (const Prodotto& prodotto : inventario) {
+            if (prodotto.getID() == id) {
+                cout << "Prodotto trovato: ";
+                prodotto.visualizzaProdotto();
+                return;
+            }
+        }
+        cout << "Prodotto non trovato." << endl;
+    }
+
+    // Metodo per rimuovere un prodotto per ID
+    void rimuoviProdottoPerID(int id) {
+        auto it = remove_if(inventario.begin(), inventario.end(), [id](const Prodotto& p) {
+            return p.getID() == id;
+        });
+
+        if (it != inventario.end()) {
+            inventario.erase(it, inventario.end());
+            cout << "Prodotto rimosso dall'inventario." << endl;
+        } else {
+            cout << "Prodotto non trovato nell'inventario." << endl;
+        }
+    }
+
 private:
     vector<Prodotto> inventario;
 };
@@ -59,6 +90,15 @@ int main() {
     sistema.aggiungiProdotto(3, "Stampante", 199.99, 3);
 
     // Visualizza l'inventario
+    sistema.visualizzaInventario();
+
+    // Cerca un prodotto per ID
+    sistema.cercaProdottoPerID(2);
+
+    // Rimuovi un prodotto per ID
+    sistema.rimuoviProdottoPerID(1);
+
+    // Visualizza l'inventario aggiornato
     sistema.visualizzaInventario();
 
     return 0;
