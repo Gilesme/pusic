@@ -18,13 +18,24 @@ public:
     int getID() const {
         return id;
     }
+    }
+    }
+    }
+    }
+    }
+    }
 
 private:
     int id;
     string nome;
     double prezzo;
     int quantita;
-};
+
+    }
+    }
+    }
+    }
+    }
 
 // Definizione della classe SistemaInventario
 class SistemaInventario {
