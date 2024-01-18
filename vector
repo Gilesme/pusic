@@ -18,25 +18,6 @@ public:
     int getID() const {
         return id;
     }
-    }
-    }
-    }
-    }
-    }
-    }
-
-private:
-    int id;
-    string nome;
-    double prezzo;
-    int quantita;
-
-    }
-    }
-    }
-    }
-    }
-
 // Definizione della classe SistemaInventario
 class SistemaInventario {
 public:
@@ -81,61 +62,3 @@ public:
         }
     }
 
-private:
-    vector<Prodotto> inventario;
-};
-
-// Funzione principale
-int main() {
-    SistemaInventario sistema;
-    int scelta;
-
-    do {
-        cout << "\nMenu:\n";
-        cout << "1. Aggiungi Prodotto\n";
-        cout << "2. Visualizza Inventario\n";
-        cout << "3. Cerca Prodotto per ID\n";
-        cout << "4. Rimuovi Prodotto per ID\n";
-        cout << "0. Esci\n";
-        cout << "Seleziona un'opzione: ";
-        cin >> scelta;
-
-        switch (scelta) {
-            case 1: {
-                int id;
-                string nome;
-                double prezzo;
-                int quantita;
-
-                cout << "Inserisci ID, Nome, Prezzo e Quantità del prodotto: ";
-                cin >> id >> nome >> prezzo >> quantita;
-                sistema.aggiungiProdotto(id, nome, prezzo, quantita);
-                break;
-            }
-            case 2:
-                sistema.visualizzaInventario();
-                break;
-            case 3: {
-                int id;
-                cout << "Inserisci l'ID del prodotto da cercare: ";
-                cin >> id;
-                sistema.cercaProdottoPerID(id);
-                break;
-            }
-            case 4: {
-                int id;
-                cout << "Inserisci l'ID del prodotto da rimuovere: ";
-                cin >> id;
-                sistema.rimuoviProdottoPerID(id);
-                break;
-            }
-            case 0:
-                cout << "Uscita dal programma.\n";
-                break;
-            default:
-                cout << "Opzione non valida. Riprova.\n";
-        }
-    } while (scelta != 0);
-
-    return 0;
-}
