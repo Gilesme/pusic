@@ -35,24 +35,10 @@ public:
             for (const Prodotto& prodotto : inventario) {
                 prodotto.visualizzaProdotto();
             }
-        }
-    }
-
-    void cercaProdottoPerID(int id) const {
-        for (const Prodotto& prodotto : inventario) {
-            if (prodotto.getID() == id) {
-                cout << "Prodotto trovato: ";
-                prodotto.visualizzaProdotto();
+      
                 return;
             }
         }
-        cout << "Prodotto non trovato." << endl;
-    }
-
-    void rimuoviProdottoPerID(int id) {
-        auto it = remove_if(inventario.begin(), inventario.end(), [id](const Prodotto& p) {
-            return p.getID() == id;
-        });
 
         if (it != inventario.end()) {
             inventario.erase(it, inventario.end());
