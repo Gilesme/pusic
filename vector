@@ -9,20 +9,7 @@ using namespace std;
 class Prodotto {
 public:
     Prodotto(int id, string nome, double prezzo, int quantita)
-        : id(id), nome(nome), prezzo(prezzo), quantita(quantita) {}
-
-    void visualizzaProdotto() const {
-        cout << "ID: " << id << ", Nome: " << nome << ", Prezzo: " << prezzo << ", Quantità: " << quantita << endl;
-    }
-
-    int getID() const {
-        return id;
-    }
-// Definizione della classe SistemaInventario
-class SistemaInventario {
-public:
-    void aggiungiProdotto(int id, string nome, double prezzo, int quantita) {
-        Prodotto nuovoProdotto(id, nome, prezzo, quantita);
+        : id(id), nome(nome), prez
         inventario.push_back(nuovoProdotto);
         cout << "Prodotto aggiunto all'inventario." << endl;
     }
