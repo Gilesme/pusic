@@ -7,9 +7,7 @@ using namespace std;
 
 // Definizione della classe Prodotto
         cout << "Prodotto aggiunto all'inventario." << endl;
-    }
-
-    void visualizzaInventario() const {
+    
         if (inventario.empty()) {
             cout << "L'inventario è vuoto." << endl;
         } else {
