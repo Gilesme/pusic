@@ -6,11 +6,6 @@
 using namespace std;
 
 // Definizione della classe Prodotto
-class Prodotto {
-public:
-    Prodotto(int id, string nome, double prezzo, int quantita)
-        : id(id), nome(nome), prez
-        inventario.push_back(nuovoProdotto);
         cout << "Prodotto aggiunto all'inventario." << endl;
     }
 
