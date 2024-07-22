@@ -5,15 +5,6 @@
 
 using namespace std;
 
-// Definizione della classe Prodotto
-        cout << "Prodotto aggiunto all'inventario." << endl;
-    
-        if (inventario.empty()) {
-            cout << "L'inventario è vuoto." << endl;
-        } else {
-            cout << "Inventario:" << endl;
-            for (const Prodotto& prodotto : inventario) {
-                prodotto.visualizzaProdotto();
             }
       
                 return;
